@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;700;800;900&family=Inter&family=Lumanosimo&family=Noto+Sans:wght@400;700&family=Tektur:wght@400;600&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Inconsolata";
+}
+
+/* faz com que este estilo sirva para todos os estilos dentro do body  */
+body * {
+  box-sizing: border-box;
+}
+
+.main-login {
+  /* vw é a porcentagem da largura da sua tela - 1000px = 100vw - 1vh = 10px, pega a tela que esta na página */
+  width: 100%;
+  height: 100vh;
+  background: #070716;
+  display: flex;
+  flex-direction: row;
+  /*
+    justify-content: start; = coloca o item na esquerda
+    justify-content: end; = coloca na direita
+    justify-content: space-between; = cria um espaco igual para todos
+    justify-content: space-around; = cria espaco neles e tmb nos lados e menor
+                */
+  /* centraliza no eixo x */
+  justify-content: center;
+  /* centraliza no eixo y */
+  align-items: center;
+}
+
+.left-login {
+  /* oculpa a lagura da tela */
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* para voce colocar itens um embaixo do outro mesmo usando o diplay: flex; */
+  flex-direction: column;
+}
+.left-login h1 {
+  margin: auto;
+  font-size: 3vw;
+  color: rgb(36, 131, 219);
+}
+.right-login {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-login {
+  /* vai pegar a porcentagem da div = right-login */
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* mergen de dentro, primeiro valor = eixo y - segundo valor = eixo x*/
+  padding: 30px 35px;
+  background: #15152b;
+  border-radius: 20px;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.575);
+}
+.card-login h1 {
+  color: #2483db;
+  /* grossura da fonte */
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-shadow: 0px 10px 40px rgba(21, 85, 145, 0.822);
+  margin: 0;
+}
+.left-login-img {
+  /* deixa a foto responsíva */
+  width: 35vw;
+}
+
+/* organizar o label e o input */
+.textfield {
+  width: 100%;
+  display: flex;
+  /*
+                    justify-content: refere-se ao eixo x
+                    align-items:  refere-se ao eixo y
+                    porem quando usa o flex-direction: isso inverte e buga tudo
+                */
+  flex-direction: column;
+  /* esquerda */
+  align-items: flex-start;
+  justify-content: center;
+  /* margin somente no eixo y */
+  margin: 10px 0px;
+}
+.textfield input {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background: rgb(35, 35, 71);
+  color: rgba(123, 189, 250, 0.89);
+  font-size: 12pt;
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.575);
+  /* tira a borda da caixa */
+  outline: none;
+  /* faz com q a divFilho nao ultrapasse a divPai */
+  box-sizing: border-box;
+}
+.textfield label {
+  color: rgb(179, 218, 255);
+  margin-bottom: 10px;
+}
+.textfield > input::placeholder {
+  color: rgba(123, 189, 250, 0.616);
+}
+
+.btn-login {
+  width: 100%;
+  padding: 16px 0px;
+  margin: 25px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  /* deixa todas as letra em MAIUSCULAS */
+  text-transform: uppercase;
+  font-weight: 800;
+  /* espacamento entre as letras */
+  letter-spacing: 3px;
+  color: #070716;
+  background: rgb(36, 131, 219);
+  /* muda o cursor */
+  cursor: pointer;
+  box-shadow: 0px 10px 40px -12px rgb(21, 85, 145);
+  transition: background 0.3s;
+}
+.btn-login:hover {
+  background: rgb(27, 106, 180);
+}
+
+@media only screen and (max-width: 950px) {
+  .card-login {
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /* deixa tudo um embaixo do outro para telas menores */
+  .main-login {
+    flex-direction: column;
+  }
+  .card-login h1 {
+    font-size: 1.5rem;
+  }
+  .left-login {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .right-login {
+    width: 100%;
+    height: auto;
+  }
+  .left-login-img {
+    width: 60vw;
+  }
+  .card-login {
+    width: 80%;
+  }
+  .textfield input {
+    width: 90%;
+    padding: 6px;
+  }
+}
+
+/*  */
